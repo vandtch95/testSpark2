@@ -1,0 +1,16 @@
+Identifiant;Dossier Parent;Nom;Description;Etat;Type d'objet
+_xaaAoKNUEeKfZIYXeB1_ag;;Loading Unit;ADM_REF_LU;ACTIVE;Dossier
+_nLhVUKNVEeKfZIYXeB1_ag;Loading Unit;Dimensions;;ACTIVE;Dossier
+_hbyn0KNUEeKfZIYXeB1_ag;;Workflows;ADM_REF_WORKFLOWS;ACTIVE;Dossier
+_eSuvsKNVEeKfZIYXeB1_ag;Workflows;Dimensions;;ACTIVE;Dossier
+_0nLeoKXFEeKl_vCAQsk6Pg;;Error;;ACTIVE;Dossier
+_98qf8KXIEeKl_vCAQsk6Pg;Error;Dimensions;;ACTIVE;Dossier
+_MDDtUKgCEeKGgdw_w8ZCNw;;Treatment;;ACTIVE;Dossier
+_GBFcoKgqEeKGgdw_w8ZCNw;Treatment;Dimensions;;ACTIVE;Dossier
+_bV_3ILMfEeKN7eZmIPCODQ;;Process;;ACTIVE;Dossier
+_inw8wOGoEeOyGIfCPqoxfA;;DataQuality KPI;;ACTIVE;Dossier
+_sRvHsOGoEeOyGIfCPqoxfA;DataQuality KPI;Query;;ACTIVE;Dossier
+_tVcncOGoEeOyGIfCPqoxfA;DataQuality KPI;KPI;;ACTIVE;Dossier
+_vqq8YOr-EeOqAL6Juse56g;;Tablespace;;ACTIVE;Dossier
+_9yyw0OsCEeOqAL6Juse56g;Tablespace;Dimension;;ACTIVE;Dossier
+__PZ4wOsCEeOqAL6Juse56g;Tablespace;KPIs;;ACTIVE;Dossier

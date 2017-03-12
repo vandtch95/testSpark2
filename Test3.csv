@@ -1,0 +1,164 @@
+Identifiant;Dossier Parent;Nom;Description;Type de données;Type d'objet;Etat;SELECT;WHERE;Liste de valeurs associée;L'objet peut être utilisé dans les Conditions;L'objet peut être utilisé dans les Résultats;L'objet peut être utilisé dans les Tris
+_hcRI-qNUEeKfZIYXeB1_ag;Dimensions;Lu - Loading Unit Code;"Loading Unit Code 
+";STRING;Dimension;ACTIVE;"""ADM_TRT_ST_LU"".""LU_CD""";;[par défaut];VRAI;VRAI;VRAI
+_hcRI_KNUEeKfZIYXeB1_ag;Dimensions;Lu - Loading Unit Name;Loading Unit Name;STRING;Dimension;ACTIVE;"""ADM_REF_LU"".""LU_NM""";;[par défaut];VRAI;VRAI;VRAI
+_hcRJAKNUEeKfZIYXeB1_ag;Dimensions;Lu - Om ID;Operationg Manuel ID;STRING;Dimension;ACTIVE;"""ADM_REF_LU"".""OM_ID""";;[par défaut];VRAI;VRAI;VRAI
+_hcRI_6NUEeKfZIYXeB1_ag;Dimensions;Lu - Behavior Error Code;Behaviour code on error;NUMERIC;Dimension;ACTIVE;"""ADM_REF_LU"".""BEH_ERR_CD""";;[par défaut];VRAI;VRAI;VRAI
+_hcRI-6NUEeKfZIYXeB1_ag;Dimensions;Lu - Process Unit Name;Process Unit Name;STRING;Dimension;ACTIVE;"""ADM_TRT_ST_LU"".""PROC_NM""";;[par défaut];VRAI;VRAI;VRAI
+_hcRI_aNUEeKfZIYXeB1_ag;Dimensions;Lu - Sequence Level;Sequence of Loading;STRING;Dimension;ACTIVE;"""ADM_REF_LU"".""SEQ_LEVEL""";;[par défaut];VRAI;VRAI;VRAI
+_hcRI_qNUEeKfZIYXeB1_ag;Dimensions;Lu - Workflows Par Sequence;Workflows loaded in parallel or sequence;STRING;Dimension;ACTIVE;"""ADM_REF_LU"".""WF_PAR_SEQ""";;[par défaut];VRAI;VRAI;VRAI
+12d5ea04-579a-457f-b8e0-4b3bde913cfc;Dimensions;Lu - Treatment  ID;;NUMERIC;Dimension;ACTIVE;"""ADM_TRT_ST_LU"".""TRT_ID""";;[par défaut];VRAI;VRAI;VRAI
+d4244b7e-a5e0-405a-8bd9-94be0f3087f4;Dimensions;Lu - Run ID;;NUMERIC;Dimension;ACTIVE;"""ADM_TRT_ST_LU"".""RUN_ID""";;[par défaut];VRAI;VRAI;VRAI
+494203e0-7d98-4145-8294-dc97e3d3829b;Dimensions;Lu - Datamart ID;;NUMERIC;Dimension;ACTIVE;"""ADM_TRT_ST_LU"".""DTM_ID""";;[par défaut];VRAI;VRAI;VRAI
+7d5fb6c3-86df-4980-b75c-03b3af572255;Dimensions;Lu - Start Date;;DATE_TIME;Dimension;ACTIVE;"""ADM_TRT_ST_LU"".""ST_DT""";;[par défaut];VRAI;VRAI;VRAI
+c9ee12f4-81c1-406d-ad86-145b55a93e01;Dimensions;Lu - End Date;;DATE_TIME;Dimension;ACTIVE;"""ADM_TRT_ST_LU"".""END_DT""";;[par défaut];VRAI;VRAI;VRAI
+5f94fed0-de17-47b7-86e7-1f041863badf;Dimensions;Lu - Status;;STRING;Dimension;ACTIVE;"""ADM_TRT_ST_LU"".""LU_ST""";;[par défaut];VRAI;VRAI;VRAI
+_CtE68KXJEeKl_vCAQsk6Pg;Dimensions;Lu - Duration;Difference  in hour/minutes between Lu - End Date and Lu - Start Date;STRING;Dimension;ACTIVE;"(
+  CASE 
+  WHEN (trunc((""ADM_TRT_ST_LU"".""END_DT"" - ""ADM_TRT_ST_LU"".""ST_DT"")*24) <= 9)
+  THEN '0'
+  END
+  )
+ || trunc((""ADM_TRT_ST_LU"".""END_DT"" - ""ADM_TRT_ST_LU"".""ST_DT"")*24) || 'h ' ||
+   (
+  CASE 
+  WHEN (trunc(mod((""ADM_TRT_ST_LU"".""END_DT"" - ""ADM_TRT_ST_LU"".""ST_DT"")*24,1)*60) <= 9)
+  THEN '0'
+  END
+  ) 
+  || trunc(mod((""ADM_TRT_ST_LU"".""END_DT"" - ""ADM_TRT_ST_LU"".""ST_DT"")*24,1)*60) || 'm'
+";;[par défaut];VRAI;VRAI;VRAI
+_LGwWMLYxEeK6tvaZ7QdHbg;Dimensions;Lu - Duration (Minutes);;NUMERIC;Dimension;ACTIVE;(@Select(Loading Unit\Dimensions\Lu - End Date) -@Select(Loading Unit\Dimensions\Lu - Start Date) )*1024;;[par défaut];VRAI;VRAI;VRAI
+_hbyn0aNUEeKfZIYXeB1_ag;Dimensions;Wf - Workflow ID;Workflow ID;NUMERIC;Dimension;ACTIVE;"""ADM_TRT_ST_WORKFLOWS"".""WF_ID""";;[par défaut];VRAI;VRAI;VRAI
+_hcRI8KNUEeKfZIYXeB1_ag;Dimensions;Wf - Workflow Name;Workflow name;STRING;Dimension;ACTIVE;"""ADM_REF_WORKFLOWS"".""WF_NM""";;[par défaut];VRAI;VRAI;VRAI
+_hcRI8qNUEeKfZIYXeB1_ag;Dimensions;Wf - Loading Unit Code;Loading unit code;STRING;Dimension;ACTIVE;"""ADM_TRT_ST_WORKFLOWS"".""LU_CD""";;[par défaut];VRAI;VRAI;VRAI
+_hcRI8aNUEeKfZIYXeB1_ag;Dimensions;Wf - Process Unit Name;Process unit name;STRING;Dimension;ACTIVE;"""ADM_TRT_ST_WORKFLOWS"".""PROC_NM""";;[par défaut];VRAI;VRAI;VRAI
+_hcRI9qNUEeKfZIYXeB1_ag;Dimensions;Wf - Domain Code;Domain code;STRING;Dimension;ACTIVE;"""ADM_REF_WORKFLOWS"".""DOMAIN_CD""";;[par défaut];VRAI;VRAI;VRAI
+_hcRI9KNUEeKfZIYXeB1_ag;Dimensions;Wf - INFA Fold Name;INFA folder name;STRING;Dimension;ACTIVE;"""ADM_REF_WORKFLOWS"".""INFA_FOLD_NM""";;[par défaut];VRAI;VRAI;VRAI
+_hcRI9aNUEeKfZIYXeB1_ag;Dimensions;Wf - PRM File Name;PRM file name;STRING;Dimension;ACTIVE;"""ADM_REF_WORKFLOWS"".""PRM_FILE_NM""";;[par défaut];VRAI;VRAI;VRAI
+_hcRI-KNUEeKfZIYXeB1_ag;Dimensions;Wf - Output File Name;Output file name;STRING;Dimension;ACTIVE;"""ADM_REF_WORKFLOWS"".""OUTPUT_FILE_NM""";;[par défaut];VRAI;VRAI;VRAI
+_hcRI96NUEeKfZIYXeB1_ag;Dimensions;Wf - CFG File Name;CFG name;STRING;Dimension;ACTIVE;"""ADM_REF_WORKFLOWS"".""CFG_FILE_NM""";;[par défaut];VRAI;VRAI;VRAI
+_w6KaUKXFEeKl_vCAQsk6Pg;Dimensions;Wf - Start Date;Start Date;DATE_TIME;Dimension;ACTIVE;"""ADM_TRT_ST_WORKFLOWS"".""ST_DT""";;[par défaut];VRAI;VRAI;VRAI
+_yeyOwKXFEeKl_vCAQsk6Pg;Dimensions;Wf - Status;Status;STRING;Dimension;ACTIVE;"""ADM_TRT_ST_WORKFLOWS"".""WF_ST""";;[par défaut];VRAI;VRAI;VRAI
+_yNC-gKXFEeKl_vCAQsk6Pg;Dimensions;Wf - End Date; End Date;DATE_TIME;Dimension;ACTIVE;"""ADM_TRT_ST_WORKFLOWS"".""END_DT""";;[par défaut];VRAI;VRAI;VRAI
+_03xbMKXMEeKl_vCAQsk6Pg;Dimensions;Wf - Duration;Difference  in hour/minutes between Wf - End Date and Wf - Start Date;STRING;Dimension;ACTIVE;"  (CASE 
+  WHEN (trunc(( ""ADM_TRT_ST_WORKFLOWS"".END_DT-ADM_TRT_ST_WORKFLOWS.ST_DT)*24) <= 9)
+  THEN '0'
+  END
+  )
+ || trunc(( ""ADM_TRT_ST_WORKFLOWS"".END_DT-ADM_TRT_ST_WORKFLOWS.ST_DT)*24) || 'h ' ||
+   (
+  CASE 
+  WHEN (trunc(mod(( ""ADM_TRT_ST_WORKFLOWS"".END_DT-ADM_TRT_ST_WORKFLOWS.ST_DT)*24,1)*60) <= 9)
+  THEN '0'
+  END
+  ) 
+  || trunc(mod(( ""ADM_TRT_ST_WORKFLOWS"".END_DT-ADM_TRT_ST_WORKFLOWS.ST_DT)*24,1)*60) || 'm'";;[par défaut];VRAI;VRAI;VRAI
+_ZVM2QLPeEeKJ6P20BCTxOQ;Dimensions;Wf - Treatment ID;Treatment ID;NUMERIC;Dimension;ACTIVE;"""ADM_TRT_ST_WORKFLOWS"".""TRT_ID""";;[par défaut];VRAI;VRAI;VRAI
+_3iDhILYoEeKTGdIRFSmJIA;Dimensions;Wf - Duration (Minutes);;NUMERIC;Dimension;ACTIVE;"(""ADM_TRT_ST_WORKFLOWS"".""END_DT"" - ""ADM_TRT_ST_WORKFLOWS"".""ST_DT"")*1024";;[par défaut];VRAI;VRAI;VRAI
+_Qv31IL8tEeOAGYMYJYOIGQ;Dimensions;Wf - Run Flag;;STRING;Dimension;ACTIVE;"""ADM_REF_WORKFLOWS"".""RUN_FLG""";;[par défaut];VRAI;VRAI;VRAI
+_U59P8L8tEeOAGYMYJYOIGQ;Dimensions;Wf - Country Code;;STRING;Dimension;ACTIVE;"""ADM_REF_WORKFLOWS"".""CTRY_CD""";;[par défaut];VRAI;VRAI;VRAI
+_0oBkML8tEeOAGYMYJYOIGQ;Dimensions;Wf - Workflow_LU_CD;;STRING;Dimension;ACTIVE;"""ADM_REF_WORKFLOWS"".""LU_CD""";;[par défaut];VRAI;VRAI;VRAI
+_3Yqu0KXFEeKl_vCAQsk6Pg;Dimensions;Err - Task ID;Session;NUMERIC;Dimension;ACTIVE;"""ADM_TRT_ERR_LOG"".""TASK_ID""";;[par défaut];VRAI;VRAI;VRAI
+_9UZ4AKXGEeKl_vCAQsk6Pg;Dimensions;Err - Message;Error message;STRING;Dimension;ACTIVE;"""ADM_TRT_ERR_LOG"".""ERR_MSG""
+";;[par défaut];VRAI;VRAI;VRAI
+_9Uf-oKXGEeKl_vCAQsk6Pg;Dimensions;Err - Code;Error code;STRING;Dimension;ACTIVE;"""ADM_TRT_ERR_LOG"".""ERR_CD""";;[par défaut];VRAI;VRAI;VRAI
+_9UmFQKXGEeKl_vCAQsk6Pg;Dimensions;Err - Level;Error level;STRING;Dimension;ACTIVE;"""ADM_TRT_ERR_LOG"".""ERR_LEVEL""";;[par défaut];VRAI;VRAI;VRAI
+_PKkQ0KgCEeKGgdw_w8ZCNw;Dimensions;Treatment - Treatment ID;Treatment ID/Vacation ID;NUMERIC;Dimension;ACTIVE;"""ADM_TRT_MAIN"".""TRT_ID""";;[par défaut];VRAI;VRAI;VRAI
+_V5vekKgCEeKGgdw_w8ZCNw;Dimensions;Treatment - Treatment Date ;Treatment Date ;DATE_TIME;Dimension;ACTIVE;"""ADM_TRT_MAIN"".""TRT_DT""";;[par défaut];VRAI;VRAI;VRAI
+_axnMcKgCEeKGgdw_w8ZCNw;Dimensions;Treatment - Start Date;Treatment start date ;DATE_TIME;Dimension;ACTIVE;"""ADM_TRT_MAIN"".""ST_DT""";;[par défaut];VRAI;VRAI;VRAI
+_d8vrsKgCEeKGgdw_w8ZCNw;Dimensions;Treatment - End Date;Treatment end date ;DATE_TIME;Dimension;ACTIVE;"""ADM_TRT_MAIN"".""END_DT""";;[par défaut];VRAI;VRAI;VRAI
+_gig0EKgCEeKGgdw_w8ZCNw;Dimensions;Treatment - Status;Status;STRING;Dimension;ACTIVE;"""ADM_TRT_MAIN"".""TRT_ST""";;[par défaut];VRAI;VRAI;VRAI
+_jr3xsKgCEeKGgdw_w8ZCNw;Dimensions;Treatment - Error Code;Error code;STRING;Dimension;ACTIVE;"""ADM_TRT_MAIN"".""ERR_CD""";;[par défaut];VRAI;VRAI;VRAI
+_0-aQgKgCEeKGgdw_w8ZCNw;Dimensions;Treatment - Duration;"Difference  in hour/minutes between Treatment - End Date and Treatment - Start Date
+";STRING;Dimension;ACTIVE;"(
+  CASE 
+  WHEN (trunc(( ""ADM_TRT_MAIN"".""END_DT"" -  ""ADM_TRT_MAIN"".""ST_DT"")*24) <= 9)
+  THEN '0'
+  END
+  )
+ || trunc(( ""ADM_TRT_MAIN"".""END_DT"" -  ""ADM_TRT_MAIN"".""ST_DT"")*24) || 'h ' ||
+   (
+  CASE 
+  WHEN (trunc(mod(( ""ADM_TRT_MAIN"".""END_DT"" -  ""ADM_TRT_MAIN"".""ST_DT"")*24,1)*60) <= 9)
+  THEN '0'
+  END
+  ) 
+  || trunc(mod(( ""ADM_TRT_MAIN"".""END_DT"" -  ""ADM_TRT_MAIN"".""ST_DT"")*24,1)*60) || 'm'";;[par défaut];VRAI;VRAI;VRAI
+_Wg6o4KtbEeK9dogdBkjmCA;Dimensions;Treatment - Duration (Minutes);Treatment duration in minutes;NUMERIC;Dimension;ACTIVE;"(""ADM_TRT_MAIN"".END_DT-ADM_TRT_MAIN.ST_DT) * 24 *60";;[par défaut];VRAI;VRAI;VRAI
+_c27eYLMfEeKN7eZmIPCODQ;Process;Process - Process  Name;;STRING;Dimension;ACTIVE;"""ADM_REF_LU"".""PROC_NM""";;[par défaut];VRAI;VRAI;VRAI
+_huXucLMfEeKN7eZmIPCODQ;Process;Process - Start Date;;DATE_TIME;Dimension;ACTIVE;"Min(""ADM_TRT_ST_LU"".""ST_DT"")";;[par défaut];VRAI;VRAI;VRAI
+_r6rKYLMfEeKN7eZmIPCODQ;Process;Process - End Date;;DATE_TIME;Dimension;ACTIVE;"Max(""ADM_TRT_ST_LU"".""END_DT"") ";;[par défaut];VRAI;VRAI;VRAI
+_xaXGMLMfEeKN7eZmIPCODQ;Process;Process - Duration;;STRING;Dimension;ACTIVE;"(
+  CASE 
+  WHEN (trunc((@Select(Process\Process - End Date) -  @Select(Process\Process - Start Date))*24) <= 9)
+  THEN '0'
+  END
+  )
+ || trunc((@Select(Process\Process - End Date) -  @Select(Process\Process - Start Date))*24) || 'h ' ||
+   (
+  CASE 
+  WHEN (trunc(mod((@Select(Process\Process - End Date) -  @Select(Process\Process - Start Date))*24,1)*60) <= 9)
+  THEN '0'
+  END
+  ) 
+  || trunc(mod((@Select(Process\Process - End Date) -  @Select(Process\Process - Start Date))*24,1)*60) || 'm'";;[par défaut];VRAI;VRAI;VRAI
+_I0bM0LM0EeKN7eZmIPCODQ;Process;Process - Process Status;;STRING;Dimension;ACTIVE;"CASE 
+WHEN (Count(Distinct(""ADM_TRT_ST_LU"".""LU_ST"" )) = 3) Then 'KO'
+ELSE to_char(Min(""ADM_TRT_ST_LU"".""LU_ST""))
+END
+ 
+ 
+ ";;[par défaut];VRAI;VRAI;VRAI
+_61HTsLYwEeK6tvaZ7QdHbg;Process;Process - Duration (Minutes);;NUMERIC;Dimension;ACTIVE;(@Select(Process\Process - End Date) - @Select(Process\Process - Start Date))*1024;;[par défaut];VRAI;VRAI;VRAI
+_BVcyEOGpEeOyGIfCPqoxfA;Query;DQ - Entity;;STRING;Dimension;ACTIVE;"""ADM_REF_KPI_QUERY"".""ENTITY""";;[par défaut];VRAI;VRAI;VRAI
+_BVf1YOGpEeOyGIfCPqoxfA;Query;DQ - Sub Entity;;STRING;Dimension;ACTIVE;"""ADM_REF_KPI_QUERY"".""SUB_ENTITY""";;[par défaut];VRAI;VRAI;VRAI
+_SnmPUOGpEeOyGIfCPqoxfA;Query;DQ - Sub Sub Entity;;STRING;Dimension;ACTIVE;"""ADM_REF_KPI_QUERY"".""SUB_SUB_ENTITY""";;[par défaut];VRAI;VRAI;VRAI
+_Snp5sOGpEeOyGIfCPqoxfA;Query;DQ - Sub Sub Sub Entity;;STRING;Dimension;ACTIVE;"""ADM_REF_KPI_QUERY"".""SUB_SUB_SUB_ENTITY""";;[par défaut];VRAI;VRAI;VRAI
+_9F3AMOvwEeOHrbzo4_w1cg;Query;DQ - KPI Group;;STRING;Dimension;ACTIVE;"""ADM_REF_KPI_QUERY"".""KPI_GROUP""";;[par défaut];VRAI;VRAI;VRAI
+_O5uqcOvxEeOHrbzo4_w1cg;Query;DQ - KPI Display;;STRING;Dimension;ACTIVE;"""ADM_REF_KPI_QUERY"".""KPI_DISPLAY""";;[par défaut];VRAI;VRAI;VRAI
+_qSPfsOGpEeOyGIfCPqoxfA;KPI;DQ - Nb KPI Value;;NUMERIC;Indicateur;ACTIVE;"""ADM_TRT_KPI"".""NB_KPI_VALUE""";;;VRAI;VRAI;VRAI
+_4v6qMOGpEeOyGIfCPqoxfA;KPI;DQ - Country Code;;STRING;Dimension;ACTIVE;"""ADM_TRT_KPI"".""COUNTRY_CD""";;[par défaut];VRAI;VRAI;VRAI
+_0DS6EOJZEeOl4aKzcBHkhg;KPI;DQ - TRT Date;;DATE_TIME;Dimension;ACTIVE;"""ADM_TRT_KPI"".""TRT_DT""";;[par défaut];VRAI;VRAI;VRAI
+_Y0IgcOJhEeOl4aKzcBHkhg;KPI;DQ - TRT Day Name;;STRING;Dimension;ACTIVE;"  case when (""ADM_TRT_KPI"".""TRT_DT""= (select max(ADM_TRT_KPI.TRT_DT) from ADM_TRT_KPI where ADM_TRT_KPI.TRT_DT< (select  max(ADM_TRT_KPI.TRT_DT) from ADM_TRT_KPI) ))
+  then 'Day - 1'
+  else (
+  case when (""ADM_TRT_KPI"".""TRT_DT"" =   (select max(ADM_TRT_KPI.TRT_DT) from ADM_TRT_KPI))
+  then 'Today'
+  else 
+  (
+   case when ( trunc(""ADM_TRT_KPI"".""TRT_DT"" ,'dd') <= add_months(trunc(sysdate,'dd'),-3 ))  
+  then 'Month - 3'
+  else (
+  case when (  trunc(""ADM_TRT_KPI"".""TRT_DT"" ,'dd')<= trunc(sysdate,'q')-1 )  
+  then 'Quarter- 1'
+  else (case when ( trunc(""ADM_TRT_KPI"".""TRT_DT"" ,'dd') <=add_months(trunc(sysdate,'dd'),-1))  
+  then 'Month - 1'
+  else (
+  to_char(""ADM_TRT_KPI"".""TRT_DT"", 'YYYYMMDDHH24mmss')
+  )end
+   )end
+   	)
+  end 
+  )
+  end 
+  )
+  end ";;[par défaut];VRAI;VRAI;VRAI
+_h69skOWXEeOYKaNo3jLf1Q;KPI;DQ - TRT Day Number;;STRING;Dimension;ACTIVE;"to_number(to_char(""ADM_TRT_KPI"".""TRT_DT"", 'YYYYMMDDHH24mmss'))";;[par défaut];VRAI;VRAI;VRAI
+_IQ4TIOGpEeOyGIfCPqoxfA;DataQuality KPI;DQ - KPI Id;;NUMERIC;Dimension;ACTIVE;"""ADM_REF_KPI_QUERY"".""KPI_ID""";;[par défaut];VRAI;VRAI;VRAI
+_CCLfQOysEeOkF86TPsKOHw;DataQuality KPI;DQ - Max Trt Date;;DATE_TIME;Dimension;ACTIVE;"max(""ADM_TRT_KPI"".""TRT_DT"")"; ;[par défaut];VRAI;VRAI;VRAI
+_jhkAIOysEeOkF86TPsKOHw;DataQuality KPI;DQ - Previous Trt Date;;DATE_TIME;Dimension;ACTIVE;"max(""ADM_TRT_KPI"".""TRT_DT"")";"""ADM_TRT_KPI"".""TRT_DT"" < (select max(ADM_TRT_KPI.TRT_DT) from ADM_TRT_KPI)";[par défaut];VRAI;VRAI;VRAI
+_zJ_4IOytEeOkF86TPsKOHw;DataQuality KPI;DQ - M-1 Trt Date;;STRING;Dimension;ACTIVE;"max(""ADM_TRT_KPI"".""TRT_DT"")";"trunc(""ADM_TRT_KPI"".""TRT_DT"",'dd')=add_months(trunc(sysdate,'dd'),-1 )";[par défaut];VRAI;VRAI;VRAI
+_IDB8gOyuEeOkF86TPsKOHw;DataQuality KPI;DQ - M-3 Trt Date;;STRING;Dimension;ACTIVE;" max(""ADM_TRT_KPI"".""TRT_DT"")";"trunc(""ADM_TRT_KPI"".""TRT_DT"" ,'dd') = add_months(trunc(sysdate,'dd'),-3)";[par défaut];VRAI;VRAI;VRAI
+_OEoSkOyuEeOkF86TPsKOHw;DataQuality KPI;DQ - Quarter-1 Trt Date;;STRING;Dimension;ACTIVE;"max(""ADM_TRT_KPI"".""TRT_DT"")";"trunc(""ADM_TRT_KPI"".""TRT_DT"" ,'dd')= trunc(sysdate,'q')-1 ";[par défaut];VRAI;VRAI;VRAI
+_TXsZgOr_EeOqAL6Juse56g;Dimension;Loading Date;;DATE_TIME;Dimension;ACTIVE;"""ADM_TEC_TABLESPACE_KPIS"".""LOADING_DATE""";;[par défaut];VRAI;VRAI;VRAI
+_TYRoUOr_EeOqAL6Juse56g;Dimension;Database Name;;STRING;Dimension;ACTIVE;"""ADM_TEC_TABLESPACE_KPIS"".""DATABASE_NAME""";;[par défaut];VRAI;VRAI;VRAI
+_TXzuQOr_EeOqAL6Juse56g;Dimension;Tablespace Name;;STRING;Dimension;ACTIVE;"""ADM_TEC_TABLESPACE_KPIS"".""TABLESPACE_NAME""";;[par défaut];VRAI;VRAI;VRAI
+_MjcpEOsAEeOqAL6Juse56g;KPIs;Tbs -  Total Auto Free PCT;;NUMERIC;Indicateur;ACTIVE;"""ADM_TEC_TABLESPACE_KPIS"".""TOTAL_AUTO_FREE_PCT""";;;VRAI;VRAI;VRAI
+_J4_1AOsAEeOqAL6Juse56g;KPIs;Tbs -  Total Auto Used PCT;;NUMERIC;Indicateur;ACTIVE;"""ADM_TEC_TABLESPACE_KPIS"".""TOTAL_AUTO_USED_PCT""";;;VRAI;VRAI;VRAI
+_Gj_oEOsAEeOqAL6Juse56g;KPIs;Tbs -  Max Tbs Space MB;;NUMERIC;Indicateur;ACTIVE;"""ADM_TEC_TABLESPACE_KPIS"".""MAX_SIZE_OF_TBS_MB""";;;VRAI;VRAI;VRAI
+_B7OtMOsAEeOqAL6Juse56g;KPIs;Tbs -  Total Free PCT;;NUMERIC;Indicateur;ACTIVE;"""ADM_TEC_TABLESPACE_KPIS"".""TOTAL_FREE_PCT""";;;VRAI;VRAI;VRAI
+_ui3xYOr_EeOqAL6Juse56g;KPIs;Tbs -  Total Used PCT;;NUMERIC;Indicateur;ACTIVE;"""ADM_TEC_TABLESPACE_KPIS"".""TOTAL_USED_PCT""";;;VRAI;VRAI;VRAI
+_rY-BMOr_EeOqAL6Juse56g;KPIs;Tbs -  Total Free Space MB;;NUMERIC;Indicateur;ACTIVE;"""ADM_TEC_TABLESPACE_KPIS"".""TOTAL_TBS_FREE_SPACE_MB""";;;VRAI;VRAI;VRAI
+_nrx9wOr_EeOqAL6Juse56g;KPIs;Tbs -  Total Used Space MB;;NUMERIC;Indicateur;ACTIVE;"""ADM_TEC_TABLESPACE_KPIS"".""TOTAL_USED_SPACE_MB""";;;VRAI;VRAI;VRAI
+_XWhmkOr_EeOqAL6Juse56g;KPIs;Tbs -  Total Tbs Space MB;;NUMERIC;Indicateur;ACTIVE;"""ADM_TEC_TABLESPACE_KPIS"".""TOTAL_TBS_SPACE_MB""";;;VRAI;VRAI;VRAI
